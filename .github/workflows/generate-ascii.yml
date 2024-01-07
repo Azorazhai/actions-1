@@ -1,5 +1,5 @@
 name: Generate ASCII Artwork
-run-name: by @${{ github.actor }}
+run-name: Run by @${{ github.actor }}
 
 on:
   push
@@ -11,8 +11,13 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v4
 
+      - name: List Files
+        run: ls -ltra
+
       - name: Execute Shell script
-        run: ./ascii-script.sh
+        run: |
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
 
       # - name: Install Cowsay Program
       #   run: sudo apt-get install cowsay -y
