@@ -2,7 +2,7 @@ name: Generate ASCII Artwork
 run-name: Run by @${{ github.actor }}
 
 on:
-  push
+  workflow_dispatch: 
 
 jobs: 
   build_job_1:
